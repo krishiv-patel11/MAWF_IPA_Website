@@ -12,7 +12,7 @@ export const teamSections = [
   },
 
   {
-    title: "MRA / HEDIS",
+    title: "STARs / HEDIS",
     members: Array.from(
       { length: 4 },
       () => ({

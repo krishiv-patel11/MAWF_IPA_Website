@@ -137,7 +137,8 @@ export default function Footer() {
                 <MapPin className="h-5 w-5 mt-0.5 text-[hsl(152_70%_60%)] shrink-0" />
 
                 <span className="text-white/80">
-                  Wesley Chapel, FL 33544
+                  7575 State Rd 52, Hudson, FL,
+                  34667
                 </span>
 
               </li>
@@ -147,10 +148,10 @@ export default function Footer() {
                 <Phone className="h-5 w-5 text-[hsl(152_70%_60%)]" />
 
                 <a
-                  href="tel:8139914000"
+                  href="tel:7278619800"
                   className="hover:text-white transition-colors"
                 >
-                  (813) 991-4000
+                  (727) 861-9800
                 </a>
 
               </li>
@@ -177,7 +178,7 @@ export default function Footer() {
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 pt-8 text-base text-white/45">
 
           <p>
-            © {new Date().getFullYear()} Medical Associates of West Florida IPA. All rights reserved.
+            © {new Date().getFullYear()} Medical Associates of West Florida Network. All rights reserved.
           </p>
 
           <div className="flex gap-6">

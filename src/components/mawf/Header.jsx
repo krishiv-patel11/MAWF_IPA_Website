@@ -22,17 +22,12 @@ export default function Header() {
 
     onScroll();
 
-    window.addEventListener(
-      "scroll",
-      onScroll,
-      { passive: true }
-    );
+    window.addEventListener("scroll", onScroll, {
+      passive: true,
+    });
 
     return () =>
-      window.removeEventListener(
-        "scroll",
-        onScroll
-      );
+      window.removeEventListener("scroll", onScroll);
   }, []);
 
   const aboutItems = [
@@ -50,10 +45,27 @@ export default function Header() {
     },
   ];
 
-  const doctorItems = doctors.map((doctor) => ({
-    label:
-      doctor.name ||
-      `Doctor ${doctor.id}`,
+  // Automatically sort doctors alphabetically by last name.
+  const sortedDoctors = [...doctors].sort((a, b) => {
+    const lastNameA = a.name
+      ?.replace(/\b(M\.?D\.?|D\.?O\.?|F\.A\.C\.P\.|F\.A\.B\.H\.P\.|FACP|MSN|ARNP-C|MPH|CPE|MBA)\b/gi, "")
+      .trim()
+      .split(" ")
+      .pop()
+      ?.toLowerCase() || "";
+
+    const lastNameB = b.name
+      ?.replace(/\b(M\.?D\.?|D\.?O\.?|F\.A\.C\.P\.|F\.A\.B\.H\.P\.|FACP|MSN|ARNP-C|MPH|CPE|MBA)\b/gi, "")
+      .trim()
+      .split(" ")
+      .pop()
+      ?.toLowerCase() || "";
+
+    return lastNameA.localeCompare(lastNameB);
+  });
+
+  const doctorItems = sortedDoctors.map((doctor) => ({
+    label: doctor.name || `Doctor ${doctor.id}`,
     to: `/doctors/${doctor.id}`,
   }));
 
@@ -75,7 +87,7 @@ export default function Header() {
             </span>
 
             <span className="block text-[11px] uppercase tracking-[0.22em] text-[hsl(215_22%_45%)]">
-              of West Florida IPA
+              of West Florida Network
             </span>
           </span>
         </Link>
@@ -100,11 +112,11 @@ export default function Header() {
           />
 
           <a
-            href="tel:8139914000"
+            href="tel:7278619800"
             className="inline-flex items-center gap-2 text-[17px] font-medium text-[hsl(215_35%_24%)] hover:text-[hsl(205_78%_40%)] transition-colors"
           >
             <Phone className="h-4 w-4" />
-            (813) 991-4000
+            (727) 861-9800
           </a>
 
         </nav>
@@ -119,9 +131,7 @@ export default function Header() {
           </Link>
 
           <button
-            onClick={() =>
-              setOpen((value) => !value)
-            }
+            onClick={() => setOpen((value) => !value)}
             className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg text-[hsl(215_35%_24%)] hover:bg-[hsl(205_45%_93%)]"
             aria-label="Toggle menu"
           >
@@ -156,9 +166,7 @@ export default function Header() {
               <Link
                 key={item.to}
                 to={item.to}
-                onClick={() =>
-                  setOpen(false)
-                }
+                onClick={() => setOpen(false)}
                 className="rounded-lg px-3 py-2.5 pl-6 text-base text-[hsl(215_35%_24%)] hover:bg-[hsl(205_45%_95%)]"
               >
                 {item.label}
@@ -167,9 +175,7 @@ export default function Header() {
 
             <button
               onClick={() =>
-                setDocsOpen(
-                  (value) => !value
-                )
+                setDocsOpen((value) => !value)
               }
               className="flex items-center justify-between rounded-lg px-3 py-3 text-[17px] font-medium text-[hsl(215_35%_24%)] hover:bg-[hsl(205_45%_95%)]"
             >
@@ -177,9 +183,7 @@ export default function Header() {
 
               <ChevronDown
                 className={`h-4 w-4 transition-transform ${
-                  docsOpen
-                    ? "rotate-180"
-                    : ""
+                  docsOpen ? "rotate-180" : ""
                 }`}
               />
             </button>
@@ -191,9 +195,7 @@ export default function Header() {
                   <Link
                     key={item.to}
                     to={item.to}
-                    onClick={() =>
-                      setOpen(false)
-                    }
+                    onClick={() => setOpen(false)}
                     className="block rounded-lg px-3 py-2 text-base text-[hsl(215_35%_24%)] hover:bg-[hsl(205_45%_95%)]"
                   >
                     {item.label}
@@ -205,9 +207,7 @@ export default function Header() {
 
             <Link
               to="/contact"
-              onClick={() =>
-                setOpen(false)
-              }
+              onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center rounded-lg bg-[hsl(205_78%_44%)] px-5 py-3 text-base font-semibold text-white"
             >
               Contact Us

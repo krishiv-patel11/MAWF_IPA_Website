@@ -14,7 +14,7 @@ import DoctorBio from "./pages/DoctorBio";
 
 export default function App() {
   return (
-    <BrowserRouter basename="/MAWF_IPA_Website">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
