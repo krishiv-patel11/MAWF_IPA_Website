@@ -1,25 +1,28 @@
 export const teamSections = [
   {
     title: "Operations",
-    members: Array.from(
-      { length: 4 },
-      () => ({
-        name: "",
-        title: "",
+    members: [
+      {
+        name: "Nancy Flores",
+        title: "Executive Director",
         photo: "",
-      })
-    ),
+      },
+      {
+        name: "Danielle Bosse",
+        title: "Operations Administrator",
+        photo: "",
+      },
+    ],
   },
 
   {
     title: "STARs / HEDIS",
-    members: Array.from(
-      { length: 4 },
-      () => ({
-        name: "",
-        title: "",
+    members: [
+      {
+        name: "Peggy Dunway",
+        title: "HEDIS/STARs",
         photo: "",
-      })
-    ),
+      },
+    ],
   },
 ];

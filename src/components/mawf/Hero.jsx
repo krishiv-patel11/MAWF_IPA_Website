@@ -99,9 +99,6 @@ export default function Hero() {
             <br />
             of West Florida
 
-            <span className="block mt-2 font-heading font-semibold text-[hsl(152_70%_60%)]">
-              IPA
-            </span>
           </motion.h1>
 
           <motion.h2

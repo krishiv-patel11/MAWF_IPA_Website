@@ -35,7 +35,7 @@ export default function Footer() {
                 </span>
 
                 <span className="block text-[11px] uppercase tracking-[0.22em] text-white/55">
-                  of West Florida IPA
+                  of West Florida Network
                 </span>
 
               </span>
@@ -98,31 +98,44 @@ export default function Footer() {
 
           <div>
 
-            <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
-              Our Doctors
-            </h4>
+          <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
+            Our Doctors
+          </h4>
 
-            <ul className="mt-5 space-y-2 text-lg max-h-48 overflow-y-auto pr-2">
+          <ul className="mt-5 space-y-2 text-lg max-h-48 overflow-y-auto pr-2">
 
-              {Array.from(
-                { length: 16 },
-                (_, index) => (
-                  <li key={index}>
+            {[
+              "Daniel Terrone",
+              "Donna Malone",
+              "Ehab Michael",
+              "Hemendra Sarda",
+              "John Pirrello",
+              "Jonathan Brisson",
+              "Mario Talanga",
+              "Megan Freeze",
+              "Narendra Patel",
+              "Navin Yadlapalli",
+              "Ronald Gilberg",
+              "Shahid Sulaiman",
+              "Shaival Thakore",
+              "Sonal Patel",
+              "Syed Hasan",
+              "Theresa Haffner",
+            ].map((doctor, index) => (
+              <li key={doctor}>
+                <Link
+                  to={`/doctors/${index + 1}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {doctor}
+                </Link>
+              </li>
+            ))}
 
-                    <Link
-                      to={`/doctors/${index + 1}`}
-                      className="hover:text-white transition-colors"
-                    >
-                      Doctor {index + 1}
-                    </Link>
-
-                  </li>
-                )
-              )}
-
-            </ul>
+          </ul>
 
           </div>
+
 
           <div>
 

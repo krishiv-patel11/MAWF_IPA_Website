@@ -42,7 +42,7 @@ export default function TeamPage() {
 
                 </Reveal>
 
-                <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mt-8 flex flex-wrap justify-center gap-6">
 
                   {section.members.map(
                     (member, index) => (
