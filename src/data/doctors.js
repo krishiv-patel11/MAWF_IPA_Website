@@ -1,7 +1,7 @@
 export const doctors = [
   {
     id: 1,
-    imagePosition: "50% 20%",
+    imagePosition: "50% 30%",
     name: "Jonathan Brisson, DO",
     specialty: "Family Medicine",
     bio: `Dr. Brisson is a board-certified family medicine physician who cares for patients of all ages.
@@ -127,7 +127,7 @@ Dr. Pirrello completed a three year residency in Family Medicine at Lutheran Med
 
   {
     id: 11,
-    imagePosition: "10% 20%",
+    imagePosition: "0% 0%",
     name: "Hemendra Sarda, MD, MPH, CPE",
     specialty: "Family Medicine",
     bio: `Dr. Hemendra Sarda is a board-certified Family Medicine physician committed to providing personalized, evidence-based primary care for adults and seniors. With more than a decade of clinical experience in both outpatient medicine and hospital care, he brings a unique perspective to managing chronic conditions, preventing unnecessary hospitalizations, and coordinating care across specialists and hospitals.
@@ -175,7 +175,7 @@ A New Port Richey native, Dr. Talanga is proud to serve the West Pasco community
 
   {
     id: 15,
-    imagePosition: "70% 0%",
+    imagePosition: "90% 0%",
     name: "Daniel Terrone, DO",
     specialty: "Internal Medicine",
     bio: `Dr. Daniel Terrone is board certified in Internal Medicine.
