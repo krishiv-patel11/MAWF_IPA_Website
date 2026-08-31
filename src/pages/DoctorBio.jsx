@@ -72,6 +72,9 @@ export default function DoctorBio() {
                       src={doctor.photo}
                       alt={displayName}
                       className="h-full w-full object-cover"
+                      style={{
+                        objectPosition: doctor.imagePosition || "50% 50%",
+                      }}
                     />
                   ) : (
                     <UserRound

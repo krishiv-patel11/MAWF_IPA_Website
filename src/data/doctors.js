@@ -1,6 +1,7 @@
 export const doctors = [
   {
     id: 1,
+    imagePosition: "60% 30%",
     name: "Jonathan Brisson, DO",
     specialty: "Family Medicine",
     bio: `Dr. Brisson is a board-certified family medicine physician who cares for patients of all ages.
@@ -15,7 +16,8 @@ Outside of work, he enjoys spending time with his family and supporting Tampa Ba
 
   {
     id: 2,
-    name: "Megan Freeze",
+    imagePosition: "55% 40%",
+    name: "Megan Freeze, MD",
     specialty: "",
     bio: `Dr. Megan Freeze is very pleased to join Medical Associates of West Florida. She grew up in Indiana and Virginia where she completed her undergraduate degree in Biomedical Engineering at the University of Virginia. Knowing her interest in caring for people directly, she chose to become a physician. She graduated from East Carolina University Medical School and completed her Internal Medicine residency locally at HCA Trinity Hospital where she was one of the chief residents.
 
@@ -25,6 +27,7 @@ She enjoys spending time with her husband and five young children, who are excit
 
   {
     id: 3,
+    imagePosition: "45% 35%",
     name: "Ronald S. Gilberg, M.D., F.A.C.P.",
     specialty: "Geriatric Medicine",
     bio: `Ronald S. Gilberg, M.D., F.A.C.P, is a double board-certified Geriatrician practicing in Hudson, Florida. He has participated for over 30 years in the Re-Certification program through the American Board of Internal Medicine in both Internal Medicine and Geriatric Medicine. Dr. Gilberg has been elected a Fellow of the American College of Physicians (F.A.C.P.).
@@ -39,6 +42,7 @@ In addition to his private practice, Dr. Gilberg has served as Chief of Staff at
 
   {
     id: 4,
+    imagePosition: "50% 30%",
     name: "Theresa Haffner, MSN, ARNP-C",
     specialty: "Family Practice",
     bio: `Terri Started her career in the health field as a Registered Nurse, graduating Class President from Pasco Hernando Community College in 1990. In 2002, she graduated from the University of South Florida as a Nurse Practitioner in Family Practice. She is certified by the American Nurses Credentialing Center and a member of the American Academy of Nurse Practitioner and the Florida Nurse Practitioner Network.
@@ -49,6 +53,7 @@ Originally from Philadelphia; she has lived in Florida for more than thirty year
 
   {
     id: 5,
+    imagePosition: "55% 45%",
     name: "Syed N. Hasan, M.D., F.A.B.H.P",
     specialty: "Internal Medicine",
     bio: `Dr. Hasan is a highly experienced internal medicine physician with more than 29 years of practice in patient care. He has lived in New Port Richey, Florida, since 1997 and is the owner of West Coast Medical Associates. Dr. Hasan received his medical degree from Dow Medical College in 1990 and completed his residency at Harlem Hospital-Columbia University in New York in 1996. He is known for his clinical expertise, professionalism, and dedication to delivering compassionate, high-quality care.`,
@@ -57,6 +62,7 @@ Originally from Philadelphia; she has lived in Florida for more than thirty year
 
   {
     id: 6,
+    imagePosition: "50% 50%",
     name: "Donna Malone, DO",
     specialty: "Family Medicine",
     bio: `Donna Malone, DO, is a board-certified family medicine physician who provides compassionate care for patients of all ages.
@@ -71,6 +77,7 @@ Originally from Rhode Island, Dr. Malone now lives in Florida and enjoys spendin
 
   {
     id: 7,
+    imagePosition: "50% 50%",
     name: "Ehab Michael, MD",
     specialty: "Internal Medicine",
     bio: `Dr. Michael is an internist in New Port Richey, Florida and is affiliated with multiple hospitals in the area, including Morton Plant North Bay Hospital and HCA Florida Trinity Hospital. He received his medical degree from Tanta University Faculty of Medicine and has been in practice for more than 20 years. He has expertise in treating hypertension & high blood pressure, coronary artery disease, diabetes, among other conditions. He speaks Arabic and Spanish.`,
@@ -79,6 +86,7 @@ Originally from Rhode Island, Dr. Malone now lives in Florida and enjoys spendin
 
   {
     id: 8,
+    imagePosition: "50% 35%",
     name: "Narendra C. Patel, MD",
     specialty: "Primary Care",
     bio: `Dr. Narendra C. Patel is a board-certified primary care physician who has served patients throughout Pasco County since 1990. As the founding physician of Medical Associates of West Florida LLP, Dr. Patel has dedicated more than three decades to providing compassionate, comprehensive care for adults and older adults.
@@ -91,6 +99,7 @@ In addition to patient care, Dr. Patel has held numerous leadership positions wi
 
   {
     id: 9,
+    imagePosition: "50% 35%",
     name: "Sonal Patel, MD",
     specialty: "Internal Medicine, Geriatric Medicine",
     bio: `Sonal Patel MD is Board Certified in Internal Medicine, and she has specialized in Geriatric Care in Tampa for the last 11 years.
@@ -105,6 +114,7 @@ She is compassionate and understanding, yet is up to date with current medicine 
 
   {
     id: 10,
+    imagePosition: "50% 35%",
     name: "John Pirrello, MD",
     specialty: "Family Medicine and Geriatrics",
     bio: `Dr. Pirrello is Board Certified in Family Medicine and Geriatrics.
@@ -117,6 +127,7 @@ Dr. Pirrello completed a three year residency in Family Medicine at Lutheran Med
 
   {
     id: 11,
+    imagePosition: "40% 40%",
     name: "Hemendra Sarda, MD, MPH, CPE",
     specialty: "Family Medicine",
     bio: `Dr. Hemendra Sarda is a board-certified Family Medicine physician committed to providing personalized, evidence-based primary care for adults and seniors. With more than a decade of clinical experience in both outpatient medicine and hospital care, he brings a unique perspective to managing chronic conditions, preventing unnecessary hospitalizations, and coordinating care across specialists and hospitals.
@@ -127,6 +138,7 @@ In addition to leading a successful primary care practice, Dr. Sarda has held nu
 
   {
     id: 12,
+    imagePosition: "50% 50%",
     name: "Shahid Sulaiman, MD, FACP",
     specialty: "Internal Medicine & Obesity Medicine",
     bio: `Dr. Sulaiman completed his medical education at Punjab Medical College, University of Health Sciences in Lahore Pakistan. He finished his medical training at Conemaugh Memorial Hospital in Johnstown, PA, an affiliate of Temple University in Philadelphia, PA.
@@ -137,6 +149,7 @@ Dr. Sulaiman has been practicing medicine in both an inpatient and outpatient se
 
   {
     id: 13,
+    imagePosition: "50% 50%",
     name: "Shaival P. Thakore, MD, MBA, FACP",
     specialty: "Internal Medicine & Obesity Medicine",
     bio: `Dr. Thakore, is a board-certified internal medicine and obesity medicine physician serving patients in Hudson, Florida. He earned his medical degree from the University of South Florida Morsani College of Medicine in 2005 and completed his internal medicine residency there in 2008.
@@ -149,6 +162,7 @@ Dr. Thakore is committed to delivering thoughtful, evidence-based care tailored 
 
   {
     id: 14,
+    imagePosition: "50% 35%",
     name: "Mario Talanga, DO",
     specialty: "Internal Medicine",
     bio: `Mario Talanga, DO, is a board-certified internal medicine physician. He earned his medical degree from Lake Erie College of Osteopathic Medicine in Bradenton, Florida, and completed his internal medicine residency at Regional Medical Center Bayonet Point in Hudson, Florida, where he served as Chief Resident and was named Resident of the Year by his peers.
@@ -161,6 +175,7 @@ A New Port Richey native, Dr. Talanga is proud to serve the West Pasco community
 
   {
     id: 15,
+    imagePosition: "50% 35%",
     name: "Daniel Terrone, DO",
     specialty: "Internal Medicine",
     bio: `Dr. Daniel Terrone is board certified in Internal Medicine.
@@ -175,6 +190,7 @@ Dr. Terrone moved to the Tampa Bay area and established his practice with Medica
 
   {
     id: 16,
+    imagePosition: "50% 35%",
     name: "Navin K. Yadlapalli, MD",
     specialty: "Internal Medicine",
     bio: `Navin K. Yadlapalli, MD, practiced as a hospitalist and an assistant professor of medicine at New York Presbyterian Weill Cornell Medical Center, New York. Prior to that Dr. Yadlapalli served as a hospitalist at Beth Israel Deaconess Medical Center in Boston and as an instructor in medicine at Harvard Medical School.

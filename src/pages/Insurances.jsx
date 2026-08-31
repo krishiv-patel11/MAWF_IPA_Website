@@ -112,7 +112,7 @@ export default function Insurances() {
               Don't see your plan?{" "}
 
               <a
-                href="tel:8139914000"
+                href="tel:7278619800"
                 className="font-semibold text-[hsl(205_78%_42%)] underline-offset-4 hover:underline"
               >
                 Call us
