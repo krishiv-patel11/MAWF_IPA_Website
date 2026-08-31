@@ -42,7 +42,7 @@ In addition to his private practice, Dr. Gilberg has served as Chief of Staff at
 
   {
     id: 4,
-    imagePosition: "50% 30%",
+    imagePosition: "50% 0%",
     name: "Theresa Haffner, MSN, ARNP-C",
     specialty: "Family Practice",
     bio: `Terri Started her career in the health field as a Registered Nurse, graduating Class President from Pasco Hernando Community College in 1990. In 2002, she graduated from the University of South Florida as a Nurse Practitioner in Family Practice. She is certified by the American Nurses Credentialing Center and a member of the American Academy of Nurse Practitioner and the Florida Nurse Practitioner Network.
