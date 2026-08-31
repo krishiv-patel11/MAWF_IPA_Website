@@ -1,7 +1,7 @@
 export const doctors = [
   {
     id: 1,
-    imagePosition: "50% 0%",
+    imagePosition: "50% 20%",
     name: "Jonathan Brisson, DO",
     specialty: "Family Medicine",
     bio: `Dr. Brisson is a board-certified family medicine physician who cares for patients of all ages.
@@ -99,7 +99,7 @@ In addition to patient care, Dr. Patel has held numerous leadership positions wi
 
   {
     id: 9,
-    imagePosition: "50% 0%",
+    imagePosition: "50% 10%",
     name: "Sonal Patel, MD",
     specialty: "Internal Medicine, Geriatric Medicine",
     bio: `Sonal Patel MD is Board Certified in Internal Medicine, and she has specialized in Geriatric Care in Tampa for the last 11 years.
@@ -114,7 +114,7 @@ She is compassionate and understanding, yet is up to date with current medicine 
 
   {
     id: 10,
-    imagePosition: "50% 0%",
+    imagePosition: "50% 10%",
     name: "John Pirrello, MD",
     specialty: "Family Medicine and Geriatrics",
     bio: `Dr. Pirrello is Board Certified in Family Medicine and Geriatrics.
@@ -127,7 +127,7 @@ Dr. Pirrello completed a three year residency in Family Medicine at Lutheran Med
 
   {
     id: 11,
-    imagePosition: "40% 40%",
+    imagePosition: "10% 20%",
     name: "Hemendra Sarda, MD, MPH, CPE",
     specialty: "Family Medicine",
     bio: `Dr. Hemendra Sarda is a board-certified Family Medicine physician committed to providing personalized, evidence-based primary care for adults and seniors. With more than a decade of clinical experience in both outpatient medicine and hospital care, he brings a unique perspective to managing chronic conditions, preventing unnecessary hospitalizations, and coordinating care across specialists and hospitals.
@@ -162,7 +162,7 @@ Dr. Thakore is committed to delivering thoughtful, evidence-based care tailored 
 
   {
     id: 14,
-    imagePosition: "50% 0%",
+    imagePosition: "50% 10%",
     name: "Mario Talanga, DO",
     specialty: "Internal Medicine",
     bio: `Mario Talanga, DO, is a board-certified internal medicine physician. He earned his medical degree from Lake Erie College of Osteopathic Medicine in Bradenton, Florida, and completed his internal medicine residency at Regional Medical Center Bayonet Point in Hudson, Florida, where he served as Chief Resident and was named Resident of the Year by his peers.
@@ -175,7 +175,7 @@ A New Port Richey native, Dr. Talanga is proud to serve the West Pasco community
 
   {
     id: 15,
-    imagePosition: "50% 0%",
+    imagePosition: "70% 0%",
     name: "Daniel Terrone, DO",
     specialty: "Internal Medicine",
     bio: `Dr. Daniel Terrone is board certified in Internal Medicine.
