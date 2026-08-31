@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter,
   Routes,
@@ -13,6 +13,22 @@ import Insurances from "./pages/Insurances";
 import DoctorBio from "./pages/DoctorBio";
 
 export default function App() {
+  useEffect(() => {
+    const redirect = sessionStorage.redirect;
+
+    if (redirect) {
+      delete sessionStorage.redirect;
+
+      const url = new URL(redirect);
+
+      window.history.replaceState(
+        null,
+        "",
+        url.pathname + url.search + url.hash
+      );
+    }
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
