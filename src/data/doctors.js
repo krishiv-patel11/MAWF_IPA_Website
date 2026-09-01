@@ -28,7 +28,7 @@ She enjoys spending time with her husband and five young children, who are excit
   {
     id: 3,
     imagePosition: "45% 0%",
-    name: "Ronald S. Gilberg, M.D., F.A.C.P.",
+    name: "Ronald S. Gilberg, MD, FACP",
     specialty: "Geriatric Medicine",
     bio: `Ronald S. Gilberg, M.D., F.A.C.P, is a double board-certified Geriatrician practicing in Hudson, Florida. He has participated for over 30 years in the Re-Certification program through the American Board of Internal Medicine in both Internal Medicine and Geriatric Medicine. Dr. Gilberg has been elected a Fellow of the American College of Physicians (F.A.C.P.).
 
