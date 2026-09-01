@@ -121,7 +121,7 @@ export default function Header() {
           <img
             src="/images/logo.jpg"
             alt="Medical Associates of West Florida"
-            className="h-14 w-auto object-contain scale-[2.5] origin-left mix-blend-multiply"
+            className="h-14 w-auto object-contain scale-[3.5] origin-left mix-blend-multiply"
           />
         </Link>
 
