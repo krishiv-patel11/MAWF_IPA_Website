@@ -9,28 +9,76 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
+  /*
+   * Provider ordering:
+   * 1. Sonal Patel always appears first.
+   * 2. Physicians appear next, alphabetically by last name.
+   * 3. Nurse practitioners appear at the bottom, alphabetically by last name.
+   */
+
+  const getLastName = (name = "") => {
+    return name
+      .replace(
+        /\b(M\.?D\.?|D\.?O\.?|F\.?A\.?C\.?P\.?|F\.?A\.?B\.?H\.?P\.?|FACP|MSN|ARNP-C|APRN-C|APRN|NP|DNP|MPH|CPE|MBA)\b/gi,
+        ""
+      )
+      .trim()
+      .split(/\s+/)
+      .pop()
+      ?.toLowerCase() || "";
+  };
+
+  const isNursePractitioner = (doctor) => {
+    const name = doctor.name || "";
+    const specialty = doctor.specialty || "";
+    const title = doctor.title || "";
+
+    const providerText = `${name} ${specialty} ${title}`;
+
+    return /\b(ARNP|APRN|NP|DNP|Nurse Practitioner)\b/i.test(
+      providerText
+    );
+  };
+
+  const sortedDoctors = [...doctors].sort((a, b) => {
+    const aName = (a.name || "").toLowerCase();
+    const bName = (b.name || "").toLowerCase();
+
+    // Sonal Patel is always first.
+    const aIsSonal = aName.includes("sonal patel");
+    const bIsSonal = bName.includes("sonal patel");
+
+    if (aIsSonal && !bIsSonal) return -1;
+    if (!aIsSonal && bIsSonal) return 1;
+
+    // Nurse practitioners always go below physicians.
+    const aIsNP = isNursePractitioner(a);
+    const bIsNP = isNursePractitioner(b);
+
+    if (aIsNP && !bIsNP) return 1;
+    if (!aIsNP && bIsNP) return -1;
+
+    // Alphabetize within each group by last name.
+    return getLastName(a.name).localeCompare(
+      getLastName(b.name)
+    );
+  });
+
   return (
     <footer className="bg-[hsl(215_35%_24%)] text-white/75">
-
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-14">
-
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
 
           <div>
-
             <div className="flex items-center gap-3">
-
               <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/20">
-
                 <Activity
                   className="h-5 w-5 text-[hsl(152_70%_60%)]"
                   strokeWidth={2.4}
                 />
-
               </span>
 
               <span className="leading-tight">
-
                 <span className="block font-display text-xl text-white">
                   Medical Associates
                 </span>
@@ -38,25 +86,20 @@ export default function Footer() {
                 <span className="block text-[11px] uppercase tracking-[0.22em] text-white/55">
                   of West Florida Network
                 </span>
-
               </span>
-
             </div>
 
             <p className="mt-5 text-base leading-relaxed text-white/55 max-w-xs">
               A network of independent primary care physicians serving the greater West Florida community.
             </p>
-
           </div>
 
           <div>
-
             <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
               Explore
             </h4>
 
             <ul className="mt-5 space-y-3 text-lg">
-
               <li>
                 <Link
                   to="/"
@@ -92,55 +135,44 @@ export default function Footer() {
                   Insurances Accepted
                 </Link>
               </li>
-
             </ul>
-
           </div>
 
           <div>
-
             <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
               Our Providers
             </h4>
 
             <ul className="mt-5 space-y-2 text-lg max-h-48 overflow-y-auto pr-2">
-
-              {doctors.map((doctor) => (
+              {sortedDoctors.map((doctor) => (
                 <li key={doctor.id}>
                   <Link
                     to={`/doctors/${doctor.id}`}
                     className="hover:text-white transition-colors"
                   >
-                    {doctor.name.split(",")[0]}
+                    {(doctor.name || `Doctor ${doctor.id}`).split(",")[0]}
                   </Link>
                 </li>
               ))}
-
             </ul>
-
           </div>
 
           <div>
-
             <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
               Get in touch
             </h4>
 
             <ul className="mt-5 space-y-3 text-lg">
-
               <li className="flex items-start gap-3">
-
                 <MapPin className="h-5 w-5 mt-0.5 text-[hsl(152_70%_60%)] shrink-0" />
 
                 <span className="text-white/80">
                   7575 State Rd 52, Hudson, FL,
                   34667
                 </span>
-
               </li>
 
               <li className="flex items-center gap-3">
-
                 <Phone className="h-5 w-5 text-[hsl(152_70%_60%)]" />
 
                 <a
@@ -149,11 +181,9 @@ export default function Footer() {
                 >
                   (727) 861-9800
                 </a>
-
               </li>
 
               <li className="flex items-center gap-3">
-
                 <Mail className="h-5 w-5 text-[hsl(152_70%_60%)]" />
 
                 <a
@@ -162,23 +192,18 @@ export default function Footer() {
                 >
                   info@mawfipa.com
                 </a>
-
               </li>
-
             </ul>
-
           </div>
 
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 pt-8 text-base text-white/45">
-
           <p>
             © {new Date().getFullYear()} Medical Associates of West Florida Network. All rights reserved.
           </p>
 
           <div className="flex gap-6">
-
             <Link
               to="/"
               className="hover:text-white"
@@ -199,9 +224,7 @@ export default function Footer() {
             >
               Accessibility
             </Link>
-
           </div>
-
         </div>
 
       </div>

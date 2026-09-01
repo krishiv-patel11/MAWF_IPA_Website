@@ -1,7 +1,6 @@
 import React from "react";
-import {
-  UserRound,
-} from "lucide-react";
+import { UserRound } from "lucide-react";
+
 import SEO from "../components/mawf/SEO";
 import Header from "../components/mawf/Header";
 import Footer from "../components/mawf/Footer";
@@ -14,11 +13,11 @@ export default function TeamPage() {
   return (
     <div className="bg-[hsl(206_60%_98%)]">
 
-    <SEO
-      title="Our Team"
-      description="Meet the leadership and administrative team supporting Medical Associates of West Florida IPA and its network of independent physicians."
-      path="/team"
-    />
+      <SEO
+        title="Our Team"
+        description="Meet the leadership and administrative team supporting Medical Associates of West Florida IPA and its network of independent physicians."
+        path="/team"
+      />
 
       <Header />
 
@@ -32,76 +31,72 @@ export default function TeamPage() {
 
         <div className="mx-auto max-w-[1100px] px-6 lg:px-10 space-y-16">
 
-          {teamSections.map(
-            (section) => (
-              <div key={section.title}>
+          {teamSections.map((section) => (
+            <div key={section.title}>
 
-                <Reveal>
+              <Reveal>
 
-                  <h2 className="font-display text-3xl lg:text-4xl text-[hsl(215_35%_24%)]">
-                    {section.title}
-                  </h2>
+                <h2 className="font-display text-3xl lg:text-4xl text-[hsl(215_35%_24%)]">
+                  {section.title}
+                </h2>
 
-                  <p className="mt-3 text-lg text-[hsl(215_22%_42%)]">
-                    Meet the {section.title.toLowerCase()} team supporting our network.
-                  </p>
+                <p className="mt-3 text-lg text-[hsl(215_22%_42%)]">
+                  Meet the {section.title.toLowerCase()} team supporting our network.
+                </p>
 
-                </Reveal>
+              </Reveal>
 
-                <div className="mt-8 flex flex-wrap justify-center gap-6">
+              <div className="mt-8 flex flex-wrap justify-center gap-6">
 
-                  {section.members.map(
-                    (member, index) => (
-                      <Reveal
-                        key={index}
-                        delay={(index % 4) * 0.08}
-                      >
+                {section.members.map((member, index) => (
+                  <Reveal
+                    key={member.name || index}
+                    delay={(index % 4) * 0.08}
+                  >
 
-                        <div className="rounded-2xl border border-[hsl(205_38%_88%)] bg-white p-6 text-center">
+                    <div className="rounded-2xl border border-[hsl(205_38%_88%)] bg-white p-6 text-center">
 
-                          <div className="mx-auto flex h-32 w-32 items-center justify-center overflow-hidden rounded-full bg-[hsl(205_50%_93%)]">
+                      <div className="mx-auto flex h-32 w-32 items-center justify-center overflow-hidden rounded-full bg-[hsl(205_50%_93%)]">
 
-                            {member.photo ? (
-                              <img
-                                src={member.photo}
-                                alt={
-                                  member.name ||
-                                  "Team member"
-                                }
-                                className="h-full w-full object-cover"
-                              />
-                            ) : (
-                              <UserRound
-                                className="h-12 w-12 text-[hsl(205_78%_44%)]"
-                                strokeWidth={1.5}
-                              />
-                            )}
+                        {member.photo ? (
+                          <img
+                            src={member.photo}
+                            alt={member.name || "Team member"}
+                            className="h-full w-full object-cover"
+                            style={{
+                              objectPosition:
+                                member.imagePosition || "50% 50%",
+                            }}
+                          />
+                        ) : (
+                          <UserRound
+                            className="h-12 w-12 text-[hsl(205_78%_44%)]"
+                            strokeWidth={1.5}
+                          />
+                        )}
 
-                          </div>
+                      </div>
 
-                          <h3 className="mt-5 font-display text-xl text-[hsl(215_35%_24%)]">
-                            {member.name ||
-                              "Add name"}
-                          </h3>
+                      <h3 className="mt-5 font-display text-xl text-[hsl(215_35%_24%)]">
+                        {member.name || "Add name"}
+                      </h3>
 
-                          <p className="mt-1 text-base text-[hsl(215_22%_48%)]">
-                            {member.title ||
-                              "Title"}
-                          </p>
+                      <p className="mt-1 text-base text-[hsl(215_22%_48%)]">
+                        {member.title || "Title"}
+                      </p>
 
-                        </div>
+                    </div>
 
-                      </Reveal>
-                    )
-                  )}
-
-                </div>
+                  </Reveal>
+                ))}
 
               </div>
-            )
-          )}
+
+            </div>
+          ))}
 
         </div>
+
       </section>
 
       <Footer />

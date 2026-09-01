@@ -54,7 +54,7 @@ Originally from Philadelphia; she has lived in Florida for more than thirty year
   {
     id: 5,
     imagePosition: "75% 25%",
-    name: "Syed N. Hasan, M.D., F.A.B.H.P",
+    name: "Syed N. Hasan, MD, FABHP",
     specialty: "Internal Medicine",
     bio: `Dr. Hasan is a highly experienced internal medicine physician with more than 29 years of practice in patient care. He has lived in New Port Richey, Florida, since 1997 and is the owner of West Coast Medical Associates. Dr. Hasan received his medical degree from Dow Medical College in 1990 and completed his residency at Harlem Hospital-Columbia University in New York in 1996. He is known for his clinical expertise, professionalism, and dedication to delivering compassionate, high-quality care.`,
     photo: "/images/doctors/syed-hasan.jpg",

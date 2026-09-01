@@ -1,27 +1,31 @@
 export const teamSections = [
   {
     title: "Operations",
+
     members: [
       {
         name: "Nancy Flores",
         title: "Executive Director",
-        photo: "",
+        photo: "/images/team/nancy.jpg",
       },
+
       {
         name: "Danielle Bosse",
         title: "Operations Administrator",
-        photo: "",
+        photo: "/images/team/danielle.jpg",
+        imagePosition: "50% 0%",
       },
     ],
   },
 
   {
     title: "STARs / HEDIS",
+
     members: [
       {
         name: "Peggy Dunway",
         title: "HEDIS/STARs",
-        photo: "",
+        photo: "/images/team/peggy.jpg",
       },
     ],
   },
