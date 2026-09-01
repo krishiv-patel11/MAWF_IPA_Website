@@ -7,13 +7,14 @@ export const teamSections = [
         name: "Nancy Flores",
         title: "Executive Director",
         photo: "/images/team/nancy.jpg",
+        imagePosition: "50% 25%",
       },
 
       {
         name: "Danielle Bosse",
         title: "Operations Administrator",
         photo: "/images/team/danielle.jpg",
-        imagePosition: "50% 0%",
+        imagePosition: "50% 25%",
       },
     ],
   },
@@ -26,6 +27,7 @@ export const teamSections = [
         name: "Peggy Dunway",
         title: "HEDIS/STARs",
         photo: "/images/team/peggy.jpg",
+        imagePosition: "50% 35%",
       },
     ],
   },
