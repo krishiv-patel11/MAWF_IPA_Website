@@ -100,7 +100,7 @@ export default function Footer() {
           <div>
 
             <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
-              Our Doctors
+              Our Providers
             </h4>
 
             <ul className="mt-5 space-y-2 text-lg max-h-48 overflow-y-auto pr-2">

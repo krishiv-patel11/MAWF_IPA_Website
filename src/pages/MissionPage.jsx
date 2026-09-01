@@ -5,7 +5,7 @@ import {
   Handshake,
   Sparkles,
 } from "lucide-react";
-
+import SEO from "../components/mawf/SEO";
 import Header from "../components/mawf/Header";
 import Footer from "../components/mawf/Footer";
 import PageHeader from "../components/mawf/PageHeader";
@@ -37,7 +37,11 @@ const values = [
 export default function MissionPage() {
   return (
     <div className="bg-[hsl(206_60%_98%)]">
-
+      <SEO
+        title="Our Mission"
+        description="Learn about the mission of Medical Associates of West Florida IPA and our commitment to supporting independent physicians and coordinated patient care."
+        path="/mission"
+      />
       <Header />
 
       <PageHeader

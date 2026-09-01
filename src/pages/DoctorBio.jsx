@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { UserRound, ArrowLeft } from "lucide-react";
-
+import SEO from "../components/mawf/SEO";
 import Header from "../components/mawf/Header";
 import Footer from "../components/mawf/Footer";
 import PageHeader from "../components/mawf/PageHeader";
@@ -45,9 +45,19 @@ export default function DoctorBio() {
 
   const displayName = doctor.name || `Doctor ${doctor.id}`;
   const specialty = doctor.specialty || "Medical Associates of West Florida";
-
+  const doctorName = doctor.name;
+  const doctorDescription = doctor.bio
+    ? doctor.bio.replace(/\s+/g, " ").slice(0, 155)
+    : `Learn about ${doctorName} and their role with Medical Associates of West Florida IPA.`;
   return (
     <div className="min-h-screen bg-[hsl(206_60%_98%)]">
+     
+     <SEO
+      title={doctorName}
+      description={doctorDescription}
+      path={`/doctors/${doctor.id}`}
+    />
+     
       <Header />
 
       <PageHeader

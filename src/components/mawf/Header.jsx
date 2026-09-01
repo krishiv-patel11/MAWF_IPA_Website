@@ -179,7 +179,7 @@ export default function Header() {
               }
               className="flex items-center justify-between rounded-lg px-3 py-3 text-[17px] font-medium text-[hsl(215_35%_24%)] hover:bg-[hsl(205_45%_95%)]"
             >
-              Our Doctors
+              Our Providers
 
               <ChevronDown
                 className={`h-4 w-4 transition-transform ${

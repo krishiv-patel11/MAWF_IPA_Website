@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import SEO from "../components/mawf/SEO";
 import Header from "../components/mawf/Header";
 import Footer from "../components/mawf/Footer";
 import PageHeader from "../components/mawf/PageHeader";
@@ -55,7 +55,11 @@ function Logo({ src, name }) {
 export default function Insurances() {
   return (
     <div className="bg-[hsl(206_60%_98%)]">
-
+      <SEO
+        title="Insurance Accepted"
+        description="Learn about the Medicare Advantage health plans accepted by physicians in the Medical Associates of West Florida network."
+        path="/insurances"
+      />
       <Header />
 
       <PageHeader

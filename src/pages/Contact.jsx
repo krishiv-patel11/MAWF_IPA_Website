@@ -1,6 +1,6 @@
 import React from "react";
 import { Phone } from "lucide-react";
-
+import SEO from "../components/mawf/SEO";
 import Header from "../components/mawf/Header";
 import Footer from "../components/mawf/Footer";
 import PageHeader from "../components/mawf/PageHeader";
@@ -9,6 +9,12 @@ import ContactForm from "../components/mawf/ContactForm";
 export default function Contact() {
   return (
     <div className="bg-[hsl(206_60%_98%)]">
+
+      <SEO
+        title="Contact Us"
+        description="Contact Medical Associates of West Florida IPA. Reach our team by phone or send us a message online."
+        path="/contact"
+      />
 
       <Header />
 

@@ -2,7 +2,7 @@ import React from "react";
 import {
   UserRound,
 } from "lucide-react";
-
+import SEO from "../components/mawf/SEO";
 import Header from "../components/mawf/Header";
 import Footer from "../components/mawf/Footer";
 import PageHeader from "../components/mawf/PageHeader";
@@ -13,6 +13,12 @@ import { teamSections } from "../data/team";
 export default function TeamPage() {
   return (
     <div className="bg-[hsl(206_60%_98%)]">
+
+    <SEO
+      title="Our Team"
+      description="Meet the leadership and administrative team supporting Medical Associates of West Florida IPA and its network of independent physicians."
+      path="/team"
+    />
 
       <Header />
 
