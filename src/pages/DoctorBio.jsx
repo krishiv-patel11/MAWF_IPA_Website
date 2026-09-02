@@ -18,15 +18,15 @@ export default function DoctorBio() {
         <Header />
 
         <PageHeader
-          eyebrow="Our Doctors"
-          title="Doctor Not Found"
+          eyebrow="Our Providers"
+          title="Provider Not Found"
           subtitle="The requested physician profile could not be found."
         />
 
         <section className="px-6 pb-24 lg:px-10">
           <div className="mx-auto max-w-xl text-center">
             <p className="text-lg leading-relaxed text-[hsl(215_22%_42%)]">
-              We couldn't find the requested doctor.
+              We couldn't find the requested provider.
             </p>
 
             <Link
@@ -34,7 +34,7 @@ export default function DoctorBio() {
               className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[hsl(205_78%_44%)] px-6 py-3 font-semibold text-white transition hover:opacity-90"
             >
               <ArrowLeft className="h-4 w-4" />
-              Back to Our Doctors
+              Back to Our Providers
             </Link>
           </div>
         </section>
@@ -55,6 +55,10 @@ export default function DoctorBio() {
     ? doctor.bio.replace(/\s+/g, " ").slice(0, 155)
     : `Learn about ${doctorName} and their role with Medical Associates of West Florida IPA.`;
 
+  // Only show the language information for Sonal Patel
+  const isSonalPatel =
+    doctor.name?.toLowerCase().includes("sonal patel");
+
   return (
     <div className="min-h-screen bg-[hsl(206_60%_98%)]">
 
@@ -67,7 +71,7 @@ export default function DoctorBio() {
       <Header />
 
       <PageHeader
-        eyebrow="Our Doctors"
+        eyebrow="Our Providers"
         title={displayName}
         subtitle={specialty}
       />
@@ -126,6 +130,12 @@ export default function DoctorBio() {
                   throughout West Florida.
                 </p>
 
+                {isSonalPatel && (
+                  <p className="mt-3 text-base leading-7 text-[hsl(215_22%_42%)]">
+                    Proficient in English, Spanish, and Gujarati.
+                  </p>
+                )}
+
               </div>
             </div>
 
@@ -153,7 +163,7 @@ export default function DoctorBio() {
                 </div>
               ) : (
                 <p className="mt-6 text-lg leading-8 text-[hsl(215_22%_42%)]">
-                  Doctor information will be added soon.
+                  Provider information will be added soon.
                 </p>
               )}
 
@@ -167,7 +177,7 @@ export default function DoctorBio() {
               className="inline-flex items-center gap-2 text-sm font-semibold text-[hsl(205_78%_44%)] transition hover:opacity-75"
             >
               <ArrowLeft className="h-4 w-4" />
-              Back to Our Doctors
+              Back to Our Providers
             </Link>
           </div>
 

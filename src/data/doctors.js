@@ -102,7 +102,7 @@ In addition to patient care, Dr. Patel has held numerous leadership positions wi
     imagePosition: "50% 10%",
     name: "Sonal Patel, MD",
     specialty: "Internal Medicine, Geriatric Medicine",
-    bio: `Sonal Patel MD is Board Certified in Internal Medicine, and she has specialized in Geriatric Care in Tampa for the last 11 years.
+    bio: `Sonal Patel MD is Board Certified in Internal Medicine, and she has specialized in Geriatric Care in Tampa for the last 21 years.
 
 Dr. Sonal Patel was born in Chicago, IL and she moved to South Florida at the age of 6. Dr. Patel was Valedictorian of her high school in Fort Pierce and she gained a full scholarship to University of Florida. She went on to study medicine abroad in Europe and graduated from the Medical University of Silesia in Poland. She performed her clinical rotations in Brooklyn, New York.
 
@@ -203,7 +203,7 @@ Dr. Yadlapalli has published articles on back pain and infertility. He has alway
 
   {
     id: 17,
-    imagePosition: "50% 50%",
+    imagePosition: "50% 75%",
     name: "Sylvie Lemire, MSN, APRN, FNP-C",
     specialty: "Family Nurse Practitioner",
     bio: `Sylvie Lemire is a dedicated Certified Family Nurse Practitioner with over a decade of advanced practice experience, known for her compassionate, patient-centered approach to care. She earned her Master of Science in Nursing from South University and is board certified as a Family Nurse Practitioner by the American Association of Nurse Practitioners (AANP).
