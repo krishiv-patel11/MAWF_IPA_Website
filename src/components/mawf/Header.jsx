@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  Menu,
-  X,
-  Phone,
-  ChevronDown,
-} from "lucide-react";
-
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import NavDropdown from "./NavDropdown";
 import { doctors } from "../../data/doctors";
 
@@ -54,15 +48,18 @@ export default function Header() {
    */
 
   const getLastName = (name = "") => {
-    return name
-      .replace(
-        /\b(M\.?D\.?|D\.?O\.?|F\.?A\.?C\.?P\.?|F\.?A\.?B\.?H\.?P\.?|FACP|MSN|ARNP-C|APRN-C|APRN|NP|DNP|MPH|CPE|MBA)\b/gi,
-        ""
-      )
-      .trim()
-      .split(/\s+/)
-      .pop()
-      ?.toLowerCase() || "";
+    return (
+      name
+        .replace(
+          /\b(M\.?D\.?|D\.?O\.?|F\.?A\.?C\.?P\.?|F\.?A\.?B\.?H\.?P\.?|FACP|MSN|ARNP-C|APRN-C|APRN|FNP-C|NP|DNP|MPH|CPE|MBA)\b/gi,
+          ""
+        )
+        .replace(/,\s*$/, "")
+        .trim()
+        .split(/\s+/)
+        .pop()
+        ?.toLowerCase() || ""
+    );
   };
 
   const isNursePractitioner = (doctor) => {
@@ -72,7 +69,7 @@ export default function Header() {
 
     const providerText = `${name} ${specialty} ${title}`;
 
-    return /\b(ARNP|APRN|NP|DNP|Nurse Practitioner)\b/i.test(
+    return /\b(ARNP|APRN|APRN-C|FNP-C|NP|DNP|Nurse Practitioner)\b/i.test(
       providerText
     );
   };
@@ -88,7 +85,7 @@ export default function Header() {
     if (aIsSonal && !bIsSonal) return -1;
     if (!aIsSonal && bIsSonal) return 1;
 
-    // Nurse practitioners always go below physicians.
+    // Nurse practitioners always appear after physicians.
     const aIsNP = isNursePractitioner(a);
     const bIsNP = isNursePractitioner(b);
 
@@ -96,13 +93,11 @@ export default function Header() {
     if (!aIsNP && bIsNP) return -1;
 
     // Alphabetize within each group by last name.
-    return getLastName(a.name).localeCompare(
-      getLastName(b.name)
-    );
+    return getLastName(a.name).localeCompare(getLastName(b.name));
   });
 
   const doctorItems = sortedDoctors.map((doctor) => ({
-    label: doctor.name || `Doctor ${doctor.id}`,
+    label: doctor.name || `Provider ${doctor.id}`,
     to: `/doctors/${doctor.id}`,
   }));
 
@@ -121,7 +116,7 @@ export default function Header() {
           <img
             src="/images/logo.jpg"
             alt="Medical Associates of West Florida"
-            className="h-14 w-auto object-contain scale-[4.75] origin-left mix-blend-multiply"
+            className="h-14 w-auto object-contain scale-[4.5] origin-left mix-blend-multiply"
           />
         </Link>
 

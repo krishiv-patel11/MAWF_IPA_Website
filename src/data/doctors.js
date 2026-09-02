@@ -200,6 +200,19 @@ Dr. Yadlapalli received his degree from Jefferson Medical College in Philadelphi
 Dr. Yadlapalli has published articles on back pain and infertility. He has always been interested in medical education, nutrition, and exercise. He is board certified by the American Board of Internal Medicine since 2014.`,
     photo: "/images/doctors/navin-yadlapalli.jpg",
   },
+
+  {
+    id: 17,
+    imagePosition: "50% 50%",
+    name: "Sylvie Lemire, MSN, APRN, FNP-C",
+    specialty: "Family Nurse Practitioner",
+    bio: `Sylvie Lemire is a dedicated Certified Family Nurse Practitioner with over a decade of advanced practice experience, known for her compassionate, patient-centered approach to care. She earned her Master of Science in Nursing from South University and is board certified as a Family Nurse Practitioner by the American Association of Nurse Practitioners (AANP).
+
+Prior to that, Sylvie earned her Registered Nurse (RN) degree from College Saint-Laurent in Montreal and later moved to the United States to expand her professional opportunities. Over the course of more than 20 years as a registered nurse, Sylvie specialized in intensive care, delivering high-quality care in fast-paced hospital settings.
+
+Fluent in English and French, Sylvie provides inclusive, culturally sensitive care to a diverse patient population.`,
+    photo: "/images/doctors/sylvie-lemire.jpg",
+  },
 ];
 
 export function getDoctor(id) {

@@ -97,7 +97,7 @@ export default function Hero() {
           >
             Medical Associates
             <br />
-            of West Florida
+            of West Florida Network
 
           </motion.h1>
 
