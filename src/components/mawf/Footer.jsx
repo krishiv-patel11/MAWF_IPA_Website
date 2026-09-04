@@ -11,21 +11,22 @@ import {
 export default function Footer() {
   /*
    * Provider ordering:
-   * 1. Sonal Patel always appears first.
-   * 2. Physicians appear next, alphabetically by last name.
-   * 3. Nurse practitioners appear at the bottom, alphabetically by last name.
+   * 1. Physicians appear first, alphabetically by last name.
+   * 2. Nurse practitioners appear at the bottom, alphabetically by last name.
+   * 3. Sonal Patel is treated like every other physician and appears
+   *    in her normal alphabetical position.
    */
 
   const getLastName = (name = "") => {
-    return name
-      .replace(
-        /\b(M\.?D\.?|D\.?O\.?|F\.?A\.?C\.?P\.?|F\.?A\.?B\.?H\.?P\.?|FACP|MSN|ARNP-C|APRN-C|APRN|NP|DNP|MPH|CPE|MBA)\b/gi,
-        ""
-      )
-      .trim()
-      .split(/\s+/)
-      .pop()
-      ?.toLowerCase() || "";
+    // Remove credentials after the comma first.
+    const providerName = name.split(",")[0].trim();
+
+    return (
+      providerName
+        .split(/\s+/)
+        .pop()
+        ?.toLowerCase() || ""
+    );
   };
 
   const isNursePractitioner = (doctor) => {
@@ -35,33 +36,31 @@ export default function Footer() {
 
     const providerText = `${name} ${specialty} ${title}`;
 
-    return /\b(ARNP|APRN|NP|DNP|Nurse Practitioner)\b/i.test(
+    return /\b(ARNP|APRN|APRN-C|FNP-C|NP|DNP|Nurse Practitioner)\b/i.test(
       providerText
     );
   };
 
   const sortedDoctors = [...doctors].sort((a, b) => {
-    const aName = (a.name || "").toLowerCase();
-    const bName = (b.name || "").toLowerCase();
-
-    // Sonal Patel is always first.
-    const aIsSonal = aName.includes("sonal patel");
-    const bIsSonal = bName.includes("sonal patel");
-
-    if (aIsSonal && !bIsSonal) return -1;
-    if (!aIsSonal && bIsSonal) return 1;
-
-    // Nurse practitioners always go below physicians.
     const aIsNP = isNursePractitioner(a);
     const bIsNP = isNursePractitioner(b);
 
+    // Physicians first, nurse practitioners second.
     if (aIsNP && !bIsNP) return 1;
     if (!aIsNP && bIsNP) return -1;
 
     // Alphabetize within each group by last name.
-    return getLastName(a.name).localeCompare(
+    const lastNameComparison = getLastName(a.name).localeCompare(
       getLastName(b.name)
     );
+
+    if (lastNameComparison !== 0) {
+      return lastNameComparison;
+    }
+
+    // If two providers have the same last name,
+    // alphabetize by full name.
+    return (a.name || "").localeCompare(b.name || "");
   });
 
   return (
